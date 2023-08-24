@@ -14,6 +14,8 @@ builder.Services.AddCors(option =>
     });
 });
 
+builder.Services.AddSingleton<IDictionary<string, UserConnection>>(option => new Dictionary<string, UserConnection>());
+
 var app = builder.Build();
 
 app.UseRouting();
